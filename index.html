@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Угадай число!</h1>
+      <p>Число от <span class="min">X</span> до <span class="max">X</span></p>
+      <p class="input">Введи число: <input type="number" class="number"></p>
+      <p class="hint">Чуть больше</p>
+      <p>Осталось попыток: <span class="attempts">0</span></p>
+      <p class="control"><button class="guess">Предположить</button><button class="reset">Заново</button></p>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
