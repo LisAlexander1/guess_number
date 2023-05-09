@@ -76,6 +76,7 @@ document.querySelector<HTMLButtonElement>(".reset")!.addEventListener("click", f
   hiddenNumber = generateNumber(min,max)
   hint.classList.remove("show")
   hint.innerHTML = ""
+  focusOnInput()
   guessButton.disabled = false
   input.readOnly = false
   attemptsLeft = attemptsCount;
