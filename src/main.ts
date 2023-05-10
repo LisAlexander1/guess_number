@@ -19,6 +19,8 @@ let hint = document.querySelector<HTMLInputElement>(".hint")!
 hint.innerHTML = ""
 
 let guessButton = document.querySelector<HTMLButtonElement>(".guess")!
+  
+let win = false
 
 function generateNumber(min : number, max : number) : number {
   return Math.ceil(Math.random()*(max-min));
@@ -63,12 +65,13 @@ guessButton.addEventListener("click", function() : undefined {
     case 0:
         hint.innerHTML = "Это правильный ответ"
         disableControl()
+        win = true
         break;
     default:
       break;
   }
 
-  if (attemptsLeft == 0) {
+  if (attemptsLeft == 0 && !win) {
     disableControl()
   }
 })
@@ -81,5 +84,6 @@ document.querySelector<HTMLButtonElement>(".reset")!.addEventListener("click", f
   guessButton.disabled = false
   input.readOnly = false
   attemptsLeft = attemptsCount;
+  win = false
 })
 
