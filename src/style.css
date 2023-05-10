@@ -90,10 +90,15 @@ input {
   overflow: hidden;
   height: 0;
   border-bottom: 2px dashed rgba(211, 211, 211, 0.247) ;
+
 }
 
 .show {
   animation: show 0.3s both;
+}
+
+.hide {
+  animation: hide 0.3s both;
 }
 
 button {
@@ -132,11 +137,23 @@ button:focus-visible {
 
 @keyframes show {
   from {
-    padding-bottom: 0;
     height: 0;
+    color: transparent;
   }
   to {
-    padding-bottom: 1rem;
-    height: auto;
+    height: 2rem;
+    color: #646cff;
   }
 }
+
+@keyframes hide {
+  from {
+    height: 2rem;
+    color: #646cff;
+  }
+  to {
+    height: 0;
+    color: transparent;
+  }
+}
+

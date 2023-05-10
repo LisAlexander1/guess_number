@@ -43,6 +43,7 @@ function checkAnswer(input : string) : number {
 guessButton.addEventListener("click", function() : undefined {
   console.log(hiddenNumber)
   let answer = input.value;
+  hint.classList.remove("hide")
   hint.classList.add("show")
   if (answer == "") {
     hint.innerHTML = "Число не введено"
@@ -75,7 +76,7 @@ guessButton.addEventListener("click", function() : undefined {
 document.querySelector<HTMLButtonElement>(".reset")!.addEventListener("click", function() : undefined {
   hiddenNumber = generateNumber(min,max)
   hint.classList.remove("show")
-  hint.innerHTML = ""
+  hint.classList.add("hide")
   focusOnInput()
   guessButton.disabled = false
   input.readOnly = false
